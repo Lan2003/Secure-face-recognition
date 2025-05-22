@@ -2,8 +2,6 @@ A Face recognition system based on homomorphic encryption
 
 Instructions for use:
 
-Instructions for use:
-
 1. Put the trained face recognition model in the application/face/src folder;
 
 2. Install Python third-party libraries according to requirements.txt;
