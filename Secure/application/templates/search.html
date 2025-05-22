@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Secure Face Recognize"><!--网页描述内容-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><!--视口（viewport）的宽度等于设备的宽度，禁止缩放-->
+  <meta name="mobile-web-app-capable" content="yes"><!--可以作为独立的移动应用-->
+  <meta name="csrf-token" content="{{ csrf_token() }}"><!--存储 CSRF 令牌，防止跨站请求伪造攻击-->
+  <title>安全人脸识别</title>
+  <link rel="icon" href="./../static/img/favicon.ico">
+  <link rel="stylesheet" href="./../static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./../static/css/weui.min.css">
+  <link rel="stylesheet" href="//cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./../static/css/gain.css">
+</head>
+<body class="text-center">
+<div class="cover-container d-flex w-100 h-100 p-2 mx-auto flex-column">
+  {# 页眉 #}
+  <header class="masthead1">
+    <div>
+      <h3 class="masthead-brand">人脸识别————登录</h3>
+      <nav class="nav nav-masthead justify-content-center">
+        <a class="nav-link" href="/">首页</a>
+        <a class="nav-link" href="/search">登录页</a>
+        <a class="nav-link" href="/info">对比页</a>
+      </nav>
+    </div>
+  </header>
+  {# 主体 #}
+  <main role="main" class="cover" id="gain1">
+   <!-- <button class="btn btn-outline-light border-0 mt-2" id="load">初始加载数据库</button>-->
+    {# 拍摄上传 #}
+    <div class="container mt-2">
+      <h3>拍摄照片</h3>
+      <div class="text-center">
+        <div class="d-flex flex-column" id="start1">
+          <i class="fa  fa-user-o fa-5x" id="start-i1"></i>
+          <button class="btn btn-outline-light align-self-center mt-2" id="startCamera1">开启摄像头拍摄照片</button>
+        </div>
+        <div id="capture1" style="display:none;">
+          <video class="rounded mx-auto d-block" id="camera1" autoplay playsinline></video>
+          <button class="btn btn-outline-light border-0 mt-2 disabled" id="about1">关于</button>
+          <button class="btn btn-outline-light mt-2" id="snap1">拍摄</button>
+          <button class="btn btn-outline-light border-0 mt-2" id="back1">返回</button>
+        </div>
+        <div id='canvasi'>
+          <canvas id="photo1"width="56px" height="48px"></canvas>
+        </div>
+      </div>
+    </div>
+    {# 上传照片 #}
+    <div class="container mt-4" id="uploadArea1">
+      <h3>上传照片</h3>
+      <div class="d-flex flex-column">
+        <div class="weui-cells weui-cells_form" id="uploader1">
+          <div class="weui-cell">
+            <div class="weui-cell__bd">
+              <div class="weui-uploader">
+                <div class="weui-uploader__hd">
+                    <div class="weui-uploader__info"><span id="uploadCount1">0</span>/1</div>
+                  </div>
+                <div class="weui-uploader__bd">
+                  <ul class="weui-uploader__files" id="uploaderFiles1"></ul>
+                  <div class="weui-uploader__input-box">
+                    <input id="uploaderInput1" class="weui-uploader__input" type="file" accept="image/jpg, image/png, image/jpeg">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-outline-light ml-3 mt-2 mb-4 align-self-center" id="upload1">上传</button>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script src="./../static/js/jquery.min.js"></script>
+<script src="./../static/js/bootstrap.min.js"></script>
+<script src="./../static/js/layer/layer.min.js"></script>
+<script src="./../static/js/weui.min.js"></script>
+<script src="./../static/js/cookie.js"></script>
+<script src="./../static/js/mylogin.js"></script>
+</body>
+</html>
